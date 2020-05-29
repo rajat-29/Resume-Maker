@@ -3,6 +3,7 @@ import './App.css';
 import AppBar from '@material-ui/core/AppBar';
 import ToolBar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
+import Form from './Components/Form';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           </Typography>
         </ToolBar>
       </AppBar>
+      <Form />
     </div>
   );
 }
