@@ -22,6 +22,7 @@ class PersonalDetails extends Component {
     render() {
 
     const { handleChanges,values }  = this.props;
+    
         return (
             <div className="container">
                 <div className="row">
@@ -83,6 +84,7 @@ class PersonalDetails extends Component {
                                 defaultValue={values.bio}
                             />
                             <br /><br />
+                            
                             <Button variant="contained" color="primary" className="m-2" onClick={this.back}>Previous</Button>
                             <Button variant="contained" color="primary" className="m-2" onClick={this.continue}>Next</Button>
                         </form>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Front from './StartPage'
 import PersonalDetails from './PersonalDetails';
+import EducationalDetails from './EducationalDetails';
 
 class Form extends Component {
 
@@ -15,6 +16,12 @@ class Form extends Component {
             github: '',
             linkedin: '',
             bio: '',
+            university: '',
+            location: '',
+            degree: '',
+            startYear: '',
+            endYear: '',
+            cgpa: '',
         }
 
         this.nextStep = this.nextStep.bind(this);
@@ -54,6 +61,11 @@ class Form extends Component {
                 return (
                     <PersonalDetails nextStep={this.nextStep} prevStep={this.prevStep} handleChanges={this.handleChanges} values={this.state}/>
                 )
+            case 2:
+                return (
+                    <EducationalDetails nextStep={this.nextStep} prevStep={this.prevStep} handleChanges={this.handleChanges} values={this.state}/>
+            )
+                
         }
     }
 }
