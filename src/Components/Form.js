@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Front from './StartPage'
 import PersonalDetails from './PersonalDetails';
 import EducationalDetails from './EducationalDetails';
+import Skills from './Skills'
 
 class Form extends Component {
 
@@ -22,6 +23,8 @@ class Form extends Component {
             startYear: '',
             endYear: '',
             cgpa: '',
+            skill: [],
+            nonSkill: [],
         }
 
         this.nextStep = this.nextStep.bind(this);
@@ -44,9 +47,24 @@ class Form extends Component {
     }
 
     handleChanges = (input, value) => event => {
-        this.setState({
-            [input] : event.target.value,
-        })
+
+        if([input] == 'skill') {
+            const l1 = this.state.skill.concat(value);
+            this.setState({
+                [input] : l1
+            })
+        }
+        else if([input] == 'nonSkill') {
+            const l1 = this.state.nonSkill.concat(value);
+            this.setState({
+                [input] : l1
+            })
+        }
+        else {
+            this.setState({
+                [input] : event.target.value,
+            })
+        } 
     }
 
 
@@ -64,6 +82,10 @@ class Form extends Component {
             case 2:
                 return (
                     <EducationalDetails nextStep={this.nextStep} prevStep={this.prevStep} handleChanges={this.handleChanges} values={this.state}/>
+            )
+            case 3:
+                return (
+                    <Skills nextStep={this.nextStep} prevStep={this.prevStep} handleChanges={this.handleChanges} values={this.state}/>
             )
                 
         }
