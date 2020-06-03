@@ -9,32 +9,32 @@ class Project extends Component {
         super(props);
 
         this.state = {
-            projectName: '',
-            desc: '',
+            companyName: '',
+            jobTitle: '',
             startDate: '',
             endDate: '',
-            skill: '',
+            desc: '',
         }
 
         this.continue = this.continue.bind(this);
         this.back = this.back.bind(this);
 
-        this.project = this.project.bind(this);
-        this.description = this.description.bind(this);
+        this.companyName = this.companyName.bind(this);
+        this.jobTitle = this.jobTitle.bind(this);
         this.startDate = this.startDate.bind(this);
         this.endDate = this.endDate.bind(this);
-        this.skill = this.skill.bind(this);
+        this.desc = this.desc.bind(this);
     }
 
-    project(event) {
+    companyName(event) {
         this.setState({
-            projectName: event.target.value,
+            companyName: event.target.value,
         })
     }
 
-    description(event) {
+    jobTitle(event) {
         this.setState({
-            description: event.target.value,
+            jobTitle: event.target.value,
         })
     }
 
@@ -50,9 +50,9 @@ class Project extends Component {
         })
     }
 
-    skill(event) {
+    desc(event) {
         this.setState({
-            skill: event.target.value,
+            desc: event.target.value,
         })
     }
 
@@ -76,19 +76,19 @@ class Project extends Component {
                     </div>
                     <div className="formStyle col-sm-6">
                         <form noValidate autoComplete="off">
-                            <h2>Projects</h2><br />
+                            <h2>Past Experience</h2><br />
 
                             <TextField required
-                                label="Project Name : "
-                                onChange={this.project}
-                                defaultValue={this.state.projectName}
+                                label="Company Name : "
+                                onChange={this.companyName}
+                                defaultValue={this.state.companyName}
                             />
                             <br /><br />
 
                             <TextField required
-                                label="Project Desciption : "
-                                onChange={this.description}
-                                defaultValue={this.state.description}
+                                label="Job Title : "
+                                onChange={this.jobTitle}
+                                defaultValue={this.state.jobTitle}
                             />
                             <br /><br />
 
@@ -115,41 +115,41 @@ class Project extends Component {
                             <br /><br />
 
                             <TextField required
-                                label="Skill Used  : "
-                                onChange={this.skill}
-                                defaultValue={this.state.skill}
+                                label="Description : "
+                                onChange={this.desc}
+                                defaultValue={this.state.desc}
                             />
                             <br /><br />
 
-                            <Button variant="light" onClick={handleChanges('projects', this.state)}>Save Details</Button>
+                            <Button variant="light" onClick={handleChanges('experience', this.state)}>Save Details</Button>
                             <br /><br />
 
                             <Table striped bordered hover>
                                 <thead>
                                     <tr>
-                                        <th>Project Name</th>
-                                        <th>Project Description</th>
+                                        <th>Company Name</th>
+                                        <th>Job Details</th>
                                         <th>Start Date</th>
                                         <th>End Date</th>
-                                        <th>Skill Used</th>
+                                        <th>Description</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {values.projects.length != 0 ?
-                                    (values.projects.map((item,index) => (
+                                    {values.experience.length != 0 ?
+                                    (values.experience.map((item,index) => (
                                         <tr key={index}>
-                                            <td>{item.projectName}</td>
-                                            <td>{item.description}</td>
+                                            <td>{item.companyName}</td>
+                                            <td>{item.jobTitle}</td>
                                             <td>{item.startDate}</td>
                                             <td>{item.endDate}</td>
-                                            <td>{item.skill}</td>
+                                            <td>{item.desc}</td>
                                         </tr>
                                     ))) :
                                     (
                                         <tr>
                                             <td></td>
                                             <td></td>
-                                            <td>No Projects !!</td>
+                                            <td>No Experience !!</td>
                                             <td></td>
                                             <td></td>
                                         </tr>

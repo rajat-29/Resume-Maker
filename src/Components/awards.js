@@ -42,7 +42,7 @@ class Skills extends Component {
             <div className="container">
                 <div className="row">
                 <div className="col-sm-3">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQd8UwUitckpLaxWaZRzLZ46NH4XTI5trC1V6iRTaDAxK5AC8fA&s" className="profileImage"></img>
+                        <img src="https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v172-tang-70-icons_2.jpg?auto=format&bg=transparent&con=3&cs=srgb&dpr=1&fm=jpg&ixlib=php-3.1.0&mark=rawpixel-watermark.png&markalpha=90&markpad=13&markscale=10&markx=25&q=75&usm=15&vib=3&w=1400&s=e2fc33696f04ac0b532f54282547bdb2" className="profileImage"></img>
                     </div>
                     <div className="formStyle col-sm-6">
                         <form noValidate autoComplete="off">
