@@ -2,7 +2,7 @@ import React , {Component} from 'react';
 import TextField from '@material-ui/core/TextField';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
-import Table from 'react-bootstrap/Table'
+import Table from 'react-bootstrap/Table';
 
 import Button from '@material-ui/core/Button';
 

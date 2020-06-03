@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import Front from './StartPage'
 import PersonalDetails from './PersonalDetails';
 import EducationalDetails from './EducationalDetails';
-import Skills from './Skills'
+import Skills from './Skills';
+import Project from './Project';
 
 class Form extends Component {
 
@@ -25,6 +26,7 @@ class Form extends Component {
             cgpa: '',
             skill: [],
             nonSkill: [],
+            projects: [],
         }
 
         this.nextStep = this.nextStep.bind(this);
@@ -60,6 +62,12 @@ class Form extends Component {
                 [input] : l1
             })
         }
+        else if([input] == 'projects') {
+            const l1 = this.state.projects.concat(value);
+            this.setState({
+                [input] : l1
+            })
+        }
         else {
             this.setState({
                 [input] : event.target.value,
@@ -86,6 +94,10 @@ class Form extends Component {
             case 3:
                 return (
                     <Skills nextStep={this.nextStep} prevStep={this.prevStep} handleChanges={this.handleChanges} values={this.state}/>
+            )
+            case 4:
+                return (
+                    <Project nextStep={this.nextStep} prevStep={this.prevStep} handleChanges={this.handleChanges} values={this.state}/>
             )
                 
         }
