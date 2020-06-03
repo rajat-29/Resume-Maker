@@ -4,6 +4,7 @@ import PersonalDetails from './PersonalDetails';
 import EducationalDetails from './EducationalDetails';
 import Skills from './Skills';
 import Project from './Project';
+import Awards from './awards';
 
 class Form extends Component {
 
@@ -27,6 +28,7 @@ class Form extends Component {
             skill: [],
             nonSkill: [],
             projects: [],
+            awards: [],
         }
 
         this.nextStep = this.nextStep.bind(this);
@@ -68,6 +70,12 @@ class Form extends Component {
                 [input] : l1
             })
         }
+        else if([input] == 'awards') {
+            const l1 = this.state.awards.concat(value);
+            this.setState({
+                [input] : l1
+            })
+        }
         else {
             this.setState({
                 [input] : event.target.value,
@@ -98,6 +106,10 @@ class Form extends Component {
             case 4:
                 return (
                     <Project nextStep={this.nextStep} prevStep={this.prevStep} handleChanges={this.handleChanges} values={this.state}/>
+            )
+            case 5:
+                return (
+                    <Awards nextStep={this.nextStep} prevStep={this.prevStep} handleChanges={this.handleChanges} values={this.state}/>
             )
                 
         }
