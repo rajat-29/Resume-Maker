@@ -6,6 +6,7 @@ import Skills from './Skills';
 import Project from './Project';
 import Awards from './awards';
 import Experience from './experience';
+import Final from './final';
 
 class Form extends Component {
 
@@ -123,6 +124,10 @@ class Form extends Component {
                 return (
                     <Experience nextStep={this.nextStep} prevStep={this.prevStep} handleChanges={this.handleChanges} values={this.state}/>
             )
+            case 7:
+                return (
+                    <Final prevStep={this.prevStep}  values={this.state} />
+                )
                 
         }
     }
